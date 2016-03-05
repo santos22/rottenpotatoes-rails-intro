@@ -11,7 +11,8 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.all
+    # Rails 3 order method here to sort the movies
+    @movies = Movie.all.order(params[:sort])
   end
 
   def new
